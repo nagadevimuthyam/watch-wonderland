@@ -1,0 +1,819 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+
+<style>
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+html {
+scroll-behavior: smooth;
+}
+
+header {
+display: flex;
+justify-content: space-evenly;
+align-items: center;
+height: 60px;
+width: 100%;
+background: black;
+}
+.heading ul {
+display: flex;
+}
+.logo a {
+color: rgb(246, 240, 240);
+transition-duration: 1s;
+font-weight: 800;
+}
+.logo a:hover {
+color: rgb(240, 197, 6);
+transition-duration: 1s;
+}
+.heading ul li {
+list-style: none;
+}
+.heading ul li a {
+margin: 8px;
+text-decoration: none;
+color: black;
+font-weight: 500;
+position: relative;
+color: white;
+margin: 2px 14px;
+font-size: 18px;
+transition-duration: 1s;
+}
+.heading ul li a:active {
+color: red;
+}
+.heading ul li a:hover {
+color: rgb(243, 168, 7);
+transition-duration: 1s;
+}
+
+.heading ul li a::before {
+content: "";
+height: 2px;
+width: 0px;
+position: absolute;
+left: 0;
+bottom: 0;
+background-color: white;
+transition-duration: 1s;
+}
+.heading ul li a:hover::before {
+width: 100%;
+transition-duration: 1s;
+background-color: rgb(243, 168, 7);
+}
+#input {
+height: 30px;
+width: 300px;
+text-decoration: none;
+border: 0px;
+padding: 5px;
+}
+.logo a {
+color: white;
+font-size: 35px;
+font-weight: 500;
+text-decoration: none;
+}
+ion-icon {
+width: 30px;
+height: 30px;
+background-color: white;
+color: black;
+}
+ion-icon:hover {
+cursor: pointer;
+}
+.search a {
+display: flex;
+}
+header a ion-icon {
+position: relative;
+right: 3px;
+}
+
+.img-slider img {
+height: 720px;
+width: 1080px;
+}
+@keyframes slide {
+0% {
+left: 0px;
+}
+15% {
+left: 0px;
+}
+20% {
+left: -1080px;
+}
+32% {
+left: -1080px;
+}
+35% {
+left: -2160px;
+}
+47% {
+left: -2160px;
+}
+50% {
+left: -3240px;
+}
+63% {
+left: -3240px;
+}
+66% {
+left: -4320px;
+}
+79% {
+left: -4320px;
+}
+82% {
+left: -5400px;
+}
+100% {
+left: 0px;
+}
+}
+.img-slider {
+display: flex;
+float: left;
+position: relative;
+width: 1080px;
+height: 720px;
+animation-name: slide;
+animation-duration: 10s;
+animation-iteration-count: infinite;
+transition-duration: 2s;
+}
+
+.heading1 {
+opacity: 0;
+}
+.search {
+display: flex;
+position: relative;
+}
+.section1 {
+width: 1080px;
+overflow: hidden;
+
+justify-content: center;
+align-items: center;
+margin: 0px auto;
+}
+
+.section2 .container {
+display: flex;
+width: 100%;
+height: max-content;
+flex-wrap: wrap;
+justify-content: center;
+margin: 10px auto;
+}
+.section2 .container .items {
+margin: 10px;
+width: 200px;
+height: 340px;
+background-color: white;
+border: 2.5px solid black;
+border-radius: 12px;
+}
+.section2 .container .items .name {
+text-align: center;
+background-color: rgb(240, 197, 6);
+height: 25px;
+padding-top: 4px;
+color: white;
+margin: 0;
+}
+.section2 .container .items .price {
+float: left;
+padding-left: 10px;
+display: block;
+width: 100%;
+color: rgb(255, 0, 0);
+font-weight: 650;
+}
+.section2 .container .items .info {
+padding-left: 10px;
+color: rgb(243, 168, 7);
+}
+.section2 .container .items .img img {
+width: 200px;
+height: 200px;
+margin: 0;
+padding: 0;
+border-radius: 12px;
+transition-duration: 0.8s;
+}
+.section2 .container .items .img {
+overflow: hidden;
+margin: 0;
+}
+.section2 .container .items:hover .img img {
+transform: scale(1.2);
+transition-duration: 0.8s;
+border-radius: 12px;
+}
+.section2 .continer .items .bg {
+    border-style: solid;
+    border-color: black;
+    width: 300px;
+    margin: 21px;
+    text-align: center;
+    padding: 12px;
+    border-radius: 12px;
+}
+
+.section2 .continer .items .but {
+    background-color: goldenrod;
+    color: white;
+    border-color: red;
+    font-weight: bold;
+    border-width: 3px;
+}
+
+.section2 .continer .items .cart-container {
+    margin-top: 30px;
+}
+
+.section2 .continer .items .cart-container h2 {
+    text-align: center;
+}
+
+.section2 .continer .items .cart-container #cart-count {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.section2 .continer .items .cart-item {
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.section2 .continer .items .remove-btn {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    font-size: 14px;
+    cursor: pointer;
+}
+.section2 .continer .items .btn  {
+   width: 100%;
+   position: relative;
+   border: none;
+   border-radius: 5px;
+   background-color: blue;
+   padding: 7px 25px;
+   cursor: pointer;
+   color: white;
+}
+
+footer {
+display: flex;
+flex-direction: column;
+background-color: black;
+align-items: center;
+color: white;
+}
+
+.footer1 {
+display: flex;
+flex-direction: column;
+align-items: center;
+color: white;
+margin-top: 15px;
+}
+.social-media {
+display: flex;
+justify-content: center;
+color: white;
+flex-wrap: wrap;
+}
+.social-media a {
+color: white;
+margin: 20px;
+border-radius: 5px;
+margin-top: 10px;
+color: white;
+}
+.social-media a ion-icon {
+color: white;
+background-color: black;
+}
+.social-media a:hover ion-icon {
+color: red;
+transform: translateY(5px);
+}
+.footer2 {
+display: flex;
+width: 100%;
+justify-content: space-evenly;
+align-items: center;
+text-decoration: none;
+flex-wrap: wrap;
+}
+.footer0 {
+font-weight: 1200;
+transition-duration: 1s;
+}
+.footer0:hover {
+color: rgb(243, 168, 7);
+}
+.footer2 .heading {
+font-weight: 900;
+font-size: 18px;
+}
+.footer3 {
+margin-top: 60px;
+margin-bottom: 20px;
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+}
+.footer2 .heading:hover {
+color: rgb(243, 168, 7);
+}
+.footer2 .div:hover {
+transform: scale(1.05);
+}
+.footer3 h4 {
+margin: 0 10px;
+}
+.footer2 div {
+margin: 10px;
+}
+.menu {
+visibility: hidden;
+}
+.heading1 .ham:active {
+color: red;
+}
+.items {
+overflow: hidden;
+}
+.ham,
+.close {
+cursor: pointer;
+}
+
+@media screen and (max-width: 1250px) {
+.heading ul li {
+display: none;
+}
+
+.items {
+transform: scale(0.9);
+}
+.img-slider img {
+height: 60vw;
+width: 90vw;
+}
+.ham:active {
+color: red;
+}
+.menu {
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+.menu a ion-icon {
+position: absolute;
+}
+
+@keyframes slide1 {
+0% {
+left: 0vw;
+}
+15% {
+left: 0vw;
+}
+20% {
+left: -80vw;
+}
+32% {
+left: -80vw;
+}
+35% {
+left: -160vw;
+}
+47% {
+left: -160vw;
+}
+50% {
+left: -240vw;
+}
+63% {
+left: -240vw;
+}
+66% {
+left: -320vw;
+}
+79% {
+left: -320vw;
+}
+82% {
+left: -400vw;
+}
+100% {
+left: 0vw;
+}
+}
+.menu ul {
+display: flex;
+flex-direction: column;
+position: absolute;
+width: 100vw;
+height: 100vh;
+background-color: black;
+left: 0;
+top: 0;
+z-index: 11;
+align-items: center;
+justify-content: center;
+opacity: 1;
+}
+.close {
+z-index: 34;
+
+color: white;
+background-color: black;
+}
+.close:active {
+color: red;
+}
+.menu ul li {
+list-style: none;
+margin: 20px;
+border-top: 3px solid white;
+width: 80%;
+text-align: center;
+
+padding-top: 10px;
+}
+.menu ul li a {
+text-decoration: none;
+padding-top: 10px;
+color: white;
+font-weight: 900;
+}
+.menu ul li a:hover {
+color: rgb(240, 197, 6);
+}
+.img-slider {
+display: flex;
+float: left;
+position: relative;
+width: 80%;
+height: 60%;
+animation-name: slide1;
+animation-duration: 10s;
+animation-iteration-count: infinite;
+transition-duration: 2s;
+}
+.section1 {
+width: 80%;
+overflow: hidden;
+
+justify-content: center;
+align-items: center;
+margin: 0px auto;
+}
+
+.heading1 {
+opacity: 1;
+position: relative;
+bottom: 8px;
+}
+.search a {
+display: flex;
+flex-wrap: nowrap;
+}
+
+.heading1 .ham {
+background-color: black;
+color: white;
+}
+#input {
+width: 200px;
+flex-shrink: 2;
+}
+header {
+height: 150px;
+}
+}
+@media screen and (max-width: 550px) {
+.heading ul li {
+display: none;
+}
+.heading1 {
+opacity: 1;
+
+bottom: 8px;
+}
+
+header {
+height: 250px;
+flex-wrap: wrap;
+display: flex;
+flex-direction: column;
+}
+#input {
+width: 150px;
+}
+.close {
+z-index: 34;
+}
+
+.search a {
+display: flex;
+flex-wrap: nowrap;
+}
+}
+
+</style>
+<link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
+</head>
+
+<body>
+<header>
+<div class="logo"><a href="#">Watch Wonderland</a></div>
+<div class="menu">
+<a href="#">
+<ion-icon name="close" class="close"></ion-icon>
+</a>
+
+<ul>
+<li><a href="#" class="under">HOME</a></li>
+<li><a href="#" class="under">SHOP</a></li>
+<li><a href="#" class="under">OUR PRODUCTS</a></li>
+<li><a href="#" class="under">CONTACT US</a></li>
+<li><a href="#" class="under">ABOUT US</a></li>
+
+</ul>
+</div>
+<div class="search">
+
+<a href=""><input type="text" placeholder="search products" id="input">
+<ion-icon class="s" name="search"></ion-icon>
+</a>
+</div>
+<div class="heading">
+<ul>
+<li><a href="#" class="under">HOME</a></li>
+<li><a href="#section2" class="under">SHOP</a></li>
+<li><a href="#section2 class="under">OUR PRODUCTS</a></li>
+<li><a href="#footer" class="under">CONTACT US</a></li>
+<li><a href="#footer" class="under">ABOUT US</a></li>
+</ul>
+</div>
+<div class="heading1">
+<ion-icon name="menu" class="ham"></ion-icon>
+</div>
+</header>
+<section>
+<div class="section">
+<div class="section1">
+<div class="img-slider">
+<img src="https://images.pexels.com/photos/380782/pexels-photo-380782.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" class="img">
+<img src="https://images.pexels.com/photos/2783873/pexels-photo-2783873.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" class="img">
+<img src="https://images.pexels.com/photos/10343908/pexels-photo-10343908.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" class="img">
+<img src="https://images.pexels.com/photos/437037/pexels-photo-437037.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" class="img">
+<img src="https://images.pexels.com/photos/9979895/pexels-photo-9979895.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" class="img">
+<img src="https://images.pexels.com/photos/9980378/pexels-photo-9980378.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt="" class="img">
+<img src="https://images.pexels.com/photos/9413426/pexels-photo-9413426.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" class="img">
+</div>
+</div>
+<div id="section2" class="section2">
+<div class="container">
+<div class="items">
+<div class="img img1"><img src="https://images.pexels.com/photos/1453008/pexels-photo-1453008.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt=""></div>
+<div class="name">Fashion watches</div>
+<div class="price">$8</div>
+<div class="info">Fashion watches are built to look good.</div>
+<button class="btn btn-primary add-to-cart-btn" data-id="1"> Add to Cart </button>
+</div>
+<div class="items">
+<div class="img img2"><img src="https://images.pexels.com/photos/9897865/pexels-photo-9897865.jpeg?auto=compress&cs=tinysrgb&w=600" alt=""></div>
+<div class="name">Analogue Watches</div>
+<div class="price">$7.34</div>
+<div class="info">Analogue watches feature a traditional clock face.</div>
+<button class="btn btn-primary add-to-cart-btn" data-id="2"> Add to Cart </button>
+</div>
+<div class="items">
+<div class="img img3"><img src="https://images.pexels.com/photos/14691508/pexels-photo-14691508.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt=""></div>
+<div class="name">Smart watches</div>
+<div class="price">$19</div>
+<div class="info">Smart watches are a type of wearable technology.</div>
+<button class="btn btn-primary add-to-cart-btn" data-id="3"> Add to Cart </button>
+</div>
+<div class="items">
+<div class="img img1"><img src="https://images.pexels.com/photos/9878207/pexels-photo-9878207.jpeg?auto=compress&cs=tinysrgb&w=600" alt=""></div>
+<div class="name">Mechanical Watches</div>
+<div class="price">$20</div>
+<div class="info">Mechanical movements never require batteries.</div>
+<button class="btn btn-primary add-to-cart-btn" data-id="4"> Add to Cart </button>
+</div>
+<div class="items">
+<div class="img img1"><img src="https://images.pexels.com/photos/128206/pexels-photo-128206.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt=""></div>
+<div class="name">Hybrid Watches</div>
+<div class="price">$25</div>
+<div class="info">Hybrid watches feature analogue & digital combos.</div>
+<button class="btn btn-primary add-to-cart-btn" data-id="5"> Add to Cart </button>
+</div>
+<div class="items">
+<div class="img img1"><img src="https://images.pexels.com/photos/9848539/pexels-photo-9848539.jpeg?auto=compress&cs=tinysrgb&w=600" alt=""></div>
+<div class="name">Sport Watches</div>
+<div class="price">$18</div>
+<div class="info"> The sole purpose of being used when doing sports.</div>
+<button class="btn btn-primary add-to-cart-btn" data-id="6"> Add to Cart </button>
+</div>
+<div class="items">
+<div class="img img1"><img src="https://images.pexels.com/photos/4482936/pexels-photo-4482936.jpeg?auto=compress&cs=tinysrgb&w=600" alt=""></div>
+<div class="name">Fitness watches</div>
+<div class="price">$21</div>
+<div class="info">Fitness watches offer users an easy to use device.</div>
+<button class="btn btn-primary add-to-cart-btn" data-id="7"> Add to Cart </button>
+</div>
+<div class="items">
+<div class="img img1"><img src="https://images.pexels.com/photos/4124334/pexels-photo-4124334.jpeg?auto=compress&cs=tinysrgb&w=600" alt=""></div>
+<div class="name">Casio watches</div>
+<div class="price">$18.9</div>
+<div class="info">Casio watches are often more affordable than other brands.</div>
+<button class="btn btn-primary add-to-cart-btn" data-id="8"> Add to Cart </button>
+</div>
+<div class="items">
+<div class="img img1"><img src="https://images.pexels.com/photos/9878309/pexels-photo-9878309.jpeg?auto=compress&cs=tinysrgb&w=600" alt=""></div>
+<div class="name">Automatic watches</div>
+<div class="price">$25</div>
+<div class="info">Automatic watches are self-winding with a spring inside.</div>
+<button class="btn btn-primary add-to-cart-btn" data-id="9"> Add to Cart </button>
+</div>
+<div class="items">
+<div class="img img1"><img src="https://images.pexels.com/photos/1374128/pexels-photo-1374128.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt=""></div>
+<div class="name">Dress watches</div>
+<div class="price">$15</div>
+<div class="info">Dress watches are made to be worn with formal wear.</div>
+<button class="btn btn-primary add-to-cart-btn" data-id="10"> Add to Cart </button>
+</div>
+<div class="items">
+<div class="img img1"><img src="https://images.pexels.com/photos/9981078/pexels-photo-9981078.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt=""></div>
+<div class="name">Luxury watches</div>
+<div class="price">$100</div>
+<div class="info">Luxury watches are expensive watches.</div>
+<button class="btn btn-primary add-to-cart-btn" data-id="11"> Add to Cart </button>
+</div>
+<div class="items">
+<div class="img img1"><img src="https://media.istockphoto.com/id/1312138867/photo/vintage-military-watch-with-nato-strap-and-tactical-belt-on-army-green-background-classic.jpg?s=2048x2048&w=is&k=20&c=trfBEnNUsqou_Kuu_0o79VGny5rtDMQpiAPOyLOGvW4=" alt=""></div>
+<div class="name">Military watches </div>
+<div class="price">$30</div>
+<div class="info">Military watches are tactical watches.</div>
+<button class="btn btn-primary add-to-cart-btn" data-id="12"> Add to Cart </button>
+</div>
+<div class="items">
+<div class="img img1"><img src="https://media.istockphoto.com/id/1133745011/photo/wooden-watch-on-wooden-background.jpg?s=2048x2048&w=is&k=20&c=yQ6ftUerqPmzcD_WJvTTo01qlWtRf3EuXVhLFTxPUG0=" alt=""></div>
+<div class="name">Wood Watches</div>
+<div class="price">$21</div>
+<div class="info">A wood watch that is made of wood.</div>
+<button class="btn btn-primary add-to-cart-btn" data-id="13"> Add to Cart </button>
+</div>
+<div class="items">
+<div class="img img1"><img src="https://media.istockphoto.com/id/157618978/photo/golden-pocket-watch-isolated-on-white.jpg?s=2048x2048&w=is&k=20&c=uZLWCmzxVAX91S8B1Xsyblf6jEL9Lb7m1bBDYS2J-5M=" alt=""></div>
+<div class="name"> Pocket Watches</div>
+<div class="price">$19</div>
+<div class="info"> pocket watch is made to be carried in a pocket.</div>
+<button class="btn btn-primary add-to-cart-btn" data-id="14"> Add to Cart </button>
+</div>
+<div class="items">
+<div class="img img1"><img src="https://media.istockphoto.com/id/508092848/photo/wristwatches-on-a-dark-background-acrylic.jpg?s=612x612&w=0&k=20&c=0s2BoG7nbcwUauzcPI4hNipw4rPmjU6K02IerH9jk9U=" alt=""></div>
+<div class="name">Dive Watches</div>
+<div class="price">$42</div>
+<div class="info">dive watch designed for diving & underwater activities.</div>
+<button class="btn btn-primary add-to-cart-btn" data-id="15"> Add to Cart </button>
+</div>
+<div class="items">
+<div class="img img1"><img src="https://images.pexels.com/photos/3487862/pexels-photo-3487862.jpeg?auto=compress&cs=tinysrgb&w=600" alt=""></div>
+<div class="name">Chronograph watches </div>
+<div class="price">$22.6</div>
+<div class="info">Chronograph watches feature a face with subdials.</div>
+<button class="btn btn-primary add-to-cart-btn" data-id="16"> Add to Cart </button>
+</div>
+<div class="items">
+<div class="img img1"><img src="https://images.pexels.com/photos/15228782/pexels-photo-15228782/free-photo-of-a-person-wearing-a-smartwatch.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt=""></div>
+<div class="name">Digital watches</div>
+<div class="price">$45</div>
+<div class="info">Digital watches perfect to wear for sporting activities & workwear.</div>
+<button class="btn  btn-primary add-to-cart-btn" data-id="17"> Add to Cart </button>
+</div>
+</div>
+
+</div>
+</div>
+<div id="section2" class="section2">
+    <div class="container">
+        <div class="items">
+        <div class="cart-container">
+            <div class="cart-container h2">
+                <div class="cart-container #cart-count">
+                    <div class="cart-container">
+                        <div class="remove-btn">
+                            <h2 style="font-size:50"; id="cart">cart</h2>
+            <div id="cart-items"></div>
+            <p style="font-size: 30;">
+                Total items in cart :
+                <span id="cart-count"></span>
+            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+</section>
+<footer>
+<div id="footer" class="footer0">
+<h1>WATCH WONDERLAND</h1>
+</div>
+<div class="footer1 ">
+Connect with us at<div class="social-media">
+<a href="#">
+<ion-icon name="logo-facebook"></ion-icon>
+</a>
+<a href="#">
+<ion-icon name="logo-linkedin"></ion-icon>
+</a>
+<a href="#">
+<ion-icon name="logo-youtube"></ion-icon>
+</a>
+<a href="#">
+<ion-icon name="logo-instagram"></ion-icon>
+</a>
+<a href="#">
+<ion-icon name="logo-twitter"></ion-icon>
+</a>
+</div>
+</div>
+<div class="footer2">
+<div class="product">
+<div class="heading">Products</div>
+<div class="div">Sell your Products</div>
+<div class="div">Advertise</div>
+<div class="div">Pricing</div>
+<div class="div">Product Buisness</div>
+
+</div>
+<div class="services">
+<div class="heading">Services</div>
+<div class="div">Return</div>
+<div class="div">Cash Back</div>
+<div class="div">Affiliate Marketing</div>
+<div class="div">Others</div>
+</div>
+<div class="Company">
+<div class="heading">Company</div>
+<div class="div">Complaint</div>
+<div class="div">Careers</div>
+<div class="div">Affiliate Marketing</div>
+<div class="div">Support</div>
+</div>
+<div class="Get Help">
+<div class="heading">Get Help</div>
+<div class="div">Help Center</div>
+<div class="div">Privacy Policy</div>
+<div class="div">Terms</div>
+<div class="div">Login</div>
+</div>
+</div>
+<div class="footer3">Shopping is always a good idea<h4>#watchwonderland</h4></div>
+</footer>
+<script src="watch.js"></script>
+<script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+<script>
+const close = document.querySelector(".close");
+const open = document.querySelector(".ham");
+const menu = document.querySelector(".menu");
+close.addEventListener("click", () => {
+menu.style.visibility = "hidden";
+});
+open.addEventListener("click", () => {
+menu.style.visibility = "visible";
+});
+</script>
+
+</body>
+
+</html>
